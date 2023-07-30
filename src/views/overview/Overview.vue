@@ -1,6 +1,6 @@
 <template>
     <div>
-        Home
+        Overview
     </div>
 </template>
 <script setup lang="ts">
