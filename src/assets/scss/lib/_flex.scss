@@ -126,22 +126,27 @@ $directions: "column",
             align-items: space-around;
         }
     }
-    // Wrap
-    .flex-wrap {
-        @include make-property(flex-wrap, wrap);
-    }
-    .flex-nowrap {
-        @include make-property(flex-wrap, nowrap);
-    }
-    .flex {
-        display: flex;
-    }
-    .flex-col {
-        flex-direction: column !important;
-    }
-    .flex-center {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
+}
+
+// Wrap
+.flex-wrap {
+    @include make-property(flex-wrap, wrap);
+}
+
+.flex-nowrap {
+    @include make-property(flex-wrap, nowrap);
+}
+
+.flex {
+    display: flex;
+}
+
+.flex-col {
+    flex-direction: column !important;
+}
+
+.flex-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }

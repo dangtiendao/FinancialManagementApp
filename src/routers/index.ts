@@ -11,6 +11,7 @@ const routers: RouteRecordRaw[] = [
   {
     path: '',
     redirect: '/overview',
+    component: () => import ('@/layouts/TheLayout.vue'),
     children: [...overview, ...incomes, ...expenditure, ...statistic],
     meta: {
       Title: t('i18nCommon.OVERVIEW')
