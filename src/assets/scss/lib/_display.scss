@@ -1,0 +1,63 @@
+$styles: "inline",
+"block",
+"contents",
+"flex",
+"grid",
+"inline-block",
+"inline-flex",
+"inline-grid",
+"inline-table",
+"lint-item",
+"run-in",
+"table",
+"table-caption",
+"table-column-group",
+"table-header-group",
+"table-footer-group",
+"table-row-group",
+"table-cell",
+"table-column",
+"table-row",
+"none",
+"initial",
+"inherit";
+@each $style in $styles {
+    .d-#{$style} {
+        display: #{$style} !important;
+    }
+}
+
+@import 'responsive';
+@mixin setDisplay ($name) {
+    @each $style in $styles {
+        .d-#{$name}-#{$style} {
+            display: #{$style} !important;
+        }
+        @if ($name=='flex') {
+            display: -webkit-box;
+            display: -webkit-flex;
+            display: -moz-box;
+            display: -ms-flexbox;
+        }
+    }
+}
+
+@media (min-width: $sm) {
+    @include setDisplay(sm);
+}
+
+@media (min-width: $md) {
+    @include setDisplay(md);
+}
+
+@media (min-width: $lg) {
+    @include setDisplay (lg);
+}
+
+@media (min-width: $xl) {
+    @include setDisplay(xl);
+}
+
+@media (min-width: $xxl) {
+    @include setDisplay(xxl);
+}

@@ -1,0 +1,21 @@
+.font-regular {
+    font-weight: 500;
+}
+
+.font-medium {
+    font-weight: 600;
+}
+
+.font-bold {
+    font-weight: 700;
+}
+
+.font-italic {
+    font-style: italic;
+}
+
+@for $i from 8 to 24 {
+    .font-size {
+        font-size: #{$i}px !important;
+    }
+}

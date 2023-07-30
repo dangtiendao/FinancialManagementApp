@@ -1,7 +1,8 @@
 import { createApp } from 'vue'
-import './style.css'
 import App from './App.vue'
-import routers from './routers'
+import { initApp, startupImport } from './startup-import'
 
-// createApp(App).mount('#app')
-createApp(App).use(routers).mount('#app')
+const app = createApp(App)
+startupImport.appUseDependencies(app);
+startupImport.appSetLocale();
+initApp(app);
