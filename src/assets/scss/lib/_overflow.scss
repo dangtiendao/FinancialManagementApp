@@ -1,0 +1,23 @@
+$overflows: "auto",
+"visible",
+"hidden",
+"scroll";
+$textOverflows: "ellipsis";
+$whiteSpaces: "nowrap";
+@each $overflow in $overflows {
+    .overflow-#{$overflow} {
+        overflow: #{$overflow} !important;
+    }
+}
+
+@each $textOverflow in $textOverflows {
+    .text-overflow-#{$textOverflow} {
+        text-overflow: #{$textOverflow} !important;
+    }
+}
+
+@each $whiteSpace in $whiteSpaces {
+    .white-space-#{$whiteSpace} {
+        white-space: #{$whiteSpace} !important;
+    }
+}

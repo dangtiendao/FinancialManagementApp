@@ -1,0 +1,9 @@
+@for $zindex from 0 to 1000 {
+    .#{"z-index" + $zindex} {
+        z-index: $zindex !important;
+    }
+}
+
+.z-index-inherit {
+    z-index: inherit;
+}

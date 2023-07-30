@@ -1,0 +1,8 @@
+@mixin setClassColor($name, $color) {
+    .bg-color-#{$name} {
+        background-color: var($color);
+    }
+    .color-#{$name} {
+        color: var($color);
+    }
+}

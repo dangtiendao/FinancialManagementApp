@@ -1,27 +1,36 @@
-import { createRouter, createWebHistory } from 'vue-router'
+import { RouteRecordRaw, createRouter, createWebHistory } from 'vue-router'
+import overview from './modules/overview'
+import incomes from './modules/income'
+import expenditure from './modules/expenditure'
+import statistic from './modules/statistic'
+import i18n from '@/i18n/i18n'
 
-export default createRouter({
+const { t } = i18n.global
+
+const routers: RouteRecordRaw[] = [
+  {
+    path: '',
+    redirect: '/overview',
+    children: [...overview, ...incomes, ...expenditure, ...statistic],
+    meta: {
+      Title: t('i18nCommon.OVERVIEW')
+    }
+  },
+  {
+    path: '/no-permissions',
+    name: '403',
+    component: () => import('@/page/403.vue')
+  },
+  {
+    path: '/:pathMatch(.*)',
+    name: '404',
+    component: () => import('@/page/404.vue')
+
+  }
+]
+const router = createRouter({
   history: createWebHistory(),
-  routes: [
-    {
-      path:'',
-      redirect:'/home',
-    },
-    {
-      path: '/home',
-      component: () => import('@/views/home/Home.vue'),
-    },
-    {
-      path: '/expenditure',
-      component: () => import('@/views/expenditure/Expenditure.vue'),
-    },
-    {
-      path: '/statistic',
-      component: () => import('@/views/statistic/Statistic.vue'),
-    },
-    {
-      path: '/income',
-      component: () => import('@/views/income/Income.vue'),
-    },
-  ],
+  routes: routers
 })
+
+export default router;
