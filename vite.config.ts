@@ -27,5 +27,12 @@ export default defineConfig({
     alias: {
       '@': '/src'
     }
+  },
+  server: {
+    host: true,
+    port: 8080,
+    watch: {
+      usePolling: true
+    }
   }
 });

@@ -18,6 +18,11 @@ const routers: RouteRecordRaw[] = [
     }
   },
   {
+    path: '/login',
+    name: 'login',
+    component: () => import('@/page/Login.vue')
+  },
+  {
     path: '/no-permissions',
     name: '403',
     component: () => import('@/page/403.vue')
