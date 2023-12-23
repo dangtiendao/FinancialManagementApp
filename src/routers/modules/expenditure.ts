@@ -4,7 +4,7 @@ import { RouteRecordRaw } from "vue-router";
 const { t } = i18n.global
 const expenditure: Array<RouteRecordRaw> = [
     {
-        path: '/statistic',
+        path: '/expenditure',
         component: () => import('@/views/expenditure/Expenditure.vue'),
         meta: {
             Title: t('i18nCommon.EXPENDITURE')
