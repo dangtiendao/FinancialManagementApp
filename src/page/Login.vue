@@ -1,12 +1,13 @@
 <template>
     <div id="login" class="w-100 h-100">
-        Login
+        UserName
     </div>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+</script>
 <style lang="scss">
 #login{
-    background-color: aqua;
+    // background-color: aqua;
 }
 </style>
