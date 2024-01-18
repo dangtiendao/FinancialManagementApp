@@ -31,7 +31,11 @@ const routers: RouteRecordRaw[] = [
     path: '/:pathMatch(.*)',
     name: '404',
     component: () => import('@/page/404.vue')
-
+  },
+  {
+    path: '/demo',
+    name: 'demo',
+    component: () => import('@/views/demo-control/Demo.vue')
   }
 ]
 const router = createRouter({
